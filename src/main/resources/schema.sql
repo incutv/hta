@@ -29,7 +29,7 @@ CREATE TABLE payments (
 DROP TABLE IF EXISTS settlements;
 
 CREATE TABLE settlements (
-                             id SERIAL PRIMARY KEY,             -- 정산 고유 ID
+                             id AUTO_INCREMENT PRIMARY KEY,             -- 정산 고유 ID
                              partner_id INT,                               -- 정산이 관련된 파트너 ID
                              total_amount DECIMAL(15, 2) NOT NULL,         -- 총 정산 금액
                              status VARCHAR(20) DEFAULT 'pending',         -- 정산 상태 (예: pending, completed)
