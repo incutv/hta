@@ -1,6 +1,8 @@
 package com.example.settlementsys.controller;
 
 import com.example.settlementsys.dto.Notice;
+import com.example.settlementsys.dto.Payments;
+import com.example.settlementsys.mapper.PaymentRepository;
 import com.example.settlementsys.service.NoticeService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -14,15 +16,19 @@ import java.util.List;
 @RequestMapping("/api/demo")
 public class DemoController {
     private final NoticeService noticeService;
+    private final PaymentRepository paymentRepository;
 
-    public DemoController(NoticeService noticeService){
+    public DemoController(NoticeService noticeService,PaymentRepository paymentRepository){
         this.noticeService=noticeService;
+        this.paymentRepository = paymentRepository;
     }
 
     @GetMapping("")
     public ResponseEntity<Object> findAll() {
-        List<Notice> notices = noticeService.getAllNotices();
-        return new ResponseEntity<>(notices, HttpStatus.OK);
+//        List<Notice> notices = noticeService.getAllNotices();
+//        return new ResponseEntity<>(notices, HttpStatus.OK);
+        List<Payments> payments = paymentRepository.paySelect();
+        return new ResponseEntity<>(payments, HttpStatus.OK);
     }
 
     @GetMapping("/top10Views")
