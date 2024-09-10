@@ -10,7 +10,7 @@ public class Payments {
     private long partner_Id;
     private long user_Id;
     private long order_Id;
-    private long payument_Amount;
+    private double payment_Amount;
     private LocalDateTime payment_Date;
     private String payment_Method;
     private long pgprovider_Id;

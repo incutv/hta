@@ -8,7 +8,7 @@ import java.time.LocalDateTime;
 public class Settlements {
 	private long id;
 	private int partner_Id;
-	private long total_Amount;
+	private double total_Amount;
 	private String status;
 	private LocalDateTime time;
 	private LocalDateTime created_At;

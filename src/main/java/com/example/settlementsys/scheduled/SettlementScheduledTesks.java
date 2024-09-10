@@ -16,16 +16,11 @@ import com.example.settlementsys.service.SettlementServiceImpl;
 public class SettlementScheduledTesks {
 		private PaymentServiceImple paymentService;
 		private SettlementServiceImpl settlementService;
-		long total = 0;
+		double total = 0;
 		
 	//cron -> 주기적으로 실행할 작업의 주기를 설정 왼쪽부터 초 분 시 일 월 요일(특정 요일을 선택하지 않음 -> ?)
+		//cron =  " 0 59 23 0 0 ?" 
 	@Scheduled(cron="10 0 0 0 0 ?")
 	public void dailySettlement() {
-		List<Payments> list =  paymentService.paySelect();
-		list.forEach(p -> {
-			total =+ p.getPayument_Amount();
-		});
-		settlementService.daySettlements(total);
-		total = 0;
 	}
 }
