@@ -13,7 +13,7 @@ CREATE TABLE notice(
 DROP TABLE IF EXISTS payments;
 
 CREATE TABLE payments (
-                          id BIGINT AUTO_INCREMENT PRIMARY KEY,       -- 결제 고유 ID
+                          id BIGINT PRIMARY KEY AUTO_INCREMENT,       -- 결제 고유 ID
                           partner_id BIGINT,
                           user_id BIGINT NOT NULL,                            -- 결제를 한 사용자 ID
                           order_id BIGINT NOT NULL,                           -- 관련 주문 ID
@@ -29,7 +29,7 @@ CREATE TABLE payments (
 DROP TABLE IF EXISTS settlements;
 
 CREATE TABLE settlements (
-                             id AUTO_INCREMENT PRIMARY KEY,             -- 정산 고유 ID
+                             id BIGINT PRIMARY KEY AUTO_INCREMENT,             -- 정산 고유 ID
                              partner_id INT,                               -- 정산이 관련된 파트너 ID
                              total_amount DECIMAL(15, 2) NOT NULL,         -- 총 정산 금액
                              status VARCHAR(20) DEFAULT 'pending',         -- 정산 상태 (예: pending, completed)
