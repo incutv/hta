@@ -6,12 +6,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.example.settlementsys.dto.Payments;
-import com.example.settlementsys.mapper.PaymentRepository;
+import com.example.settlementsys.mapper.PaymentMapper;
 @Service
-public class PaymentRepositoryServiceImple implements PaymentRepositoryService {
-	private final PaymentRepository paymentRepository;
+public class PaymentServiceImple implements PaymentService {
+	private final PaymentMapper paymentRepository;
 	@Autowired
-	public PaymentRepositoryServiceImple(PaymentRepository paymentRepository) {
+	public PaymentServiceImple(PaymentMapper paymentRepository) {
 		this.paymentRepository = paymentRepository;
 	}
 	

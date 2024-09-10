@@ -4,6 +4,6 @@ import java.util.List;
 
 import com.example.settlementsys.dto.Payments;
 
-public interface PaymentRepositoryService {
+public interface PaymentService {
 	List<Payments> paySelect();
 }

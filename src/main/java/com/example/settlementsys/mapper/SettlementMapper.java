@@ -8,6 +8,6 @@ import com.example.settlementsys.dto.Settlements;
 
 
 @Mapper
-public interface SettlementRepository {
+public interface SettlementMapper {
 	public Settlements daySettlements(long total_Amount);
 }

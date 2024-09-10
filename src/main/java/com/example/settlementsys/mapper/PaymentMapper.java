@@ -7,6 +7,6 @@ import com.example.settlementsys.dto.Payments;
 import java.util.List;
 
 @Mapper
-public interface PaymentRepository {
+public interface PaymentMapper {
 	  public List<Payments> paySelect();
 }

@@ -2,7 +2,7 @@ package com.example.settlementsys.controller;
 
 import com.example.settlementsys.dto.Notice;
 import com.example.settlementsys.dto.Payments;
-import com.example.settlementsys.mapper.PaymentRepository;
+import com.example.settlementsys.mapper.PaymentMapper;
 import com.example.settlementsys.service.NoticeService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -16,9 +16,9 @@ import java.util.List;
 @RequestMapping("/api/demo")
 public class DemoController {
     private final NoticeService noticeService;
-    private final PaymentRepository paymentRepository;
+    private final PaymentMapper paymentRepository;
 
-    public DemoController(NoticeService noticeService,PaymentRepository paymentRepository){
+    public DemoController(NoticeService noticeService,PaymentMapper paymentRepository){
         this.noticeService=noticeService;
         this.paymentRepository = paymentRepository;
     }

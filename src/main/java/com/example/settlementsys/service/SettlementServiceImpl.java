@@ -4,13 +4,13 @@ package com.example.settlementsys.service;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.example.settlementsys.mapper.SettlementRepository;
+import com.example.settlementsys.mapper.SettlementMapper;
 
 @Service
-public class SettlementRepositoryServiceImpl implements SettlementRepositoryService{
-	private final SettlementRepository settlementRepository;
+public class SettlementServiceImpl implements SettlementService{
+	private final SettlementMapper settlementRepository;
 	@Autowired
-	public  SettlementRepositoryServiceImpl(SettlementRepository settlementRepository) {
+	public  SettlementServiceImpl(SettlementMapper settlementRepository) {
 		this.settlementRepository = settlementRepository;
 	}
 	@Override

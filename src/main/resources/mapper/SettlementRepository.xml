@@ -2,8 +2,8 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
-<mapper namespace="com.example.settlementsys.mapper.PaymentRepository">
-	<insert id="daySettlements" parameterType="com.example.settlementsys.dto.PaymentRepository">
-		insert into values=(0,#{partner_Id},#{total_Amount},#{status},#{payment_Date},#{created_At},#{updated_At});
+<mapper namespace="com.example.settlementsys.mapper.PaymentMapper">
+	<insert id="daySettlements" parameterType="com.example.settlementsys.dto.Settlements">
+		insert into values=(0,#{partner_Id},#{total_Amount},#{status},#{payment_Date},#{created_At},#{updated_At})
 	</insert>
 </mapper>
