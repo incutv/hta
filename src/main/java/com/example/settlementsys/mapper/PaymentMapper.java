@@ -8,5 +8,5 @@ import java.util.List;
 
 @Mapper
 public interface PaymentMapper {
-	  public List<Payments> paySelect();
+	  public List<Payments> paySelect(String dateString);
 }

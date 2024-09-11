@@ -3,7 +3,7 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="com.example.settlementsys.mapper.PaymentMapper">
-	<select id="paySelect" resultType="com.example.settlementsys.dto.Payments">
-		select * from Payments limit 10
+	<select id="paySelect" parameterType="String" resultType="com.example.settlementsys.dto.Payments">
+		select * from Payments where #{settlementDayString} = DATE_SUB(CURDATE(), INTERVAL 1 DAY) and STATUS = 'COMPLETED'
 	</select>
 </mapper>
