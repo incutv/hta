@@ -23,13 +23,13 @@ public class DemoController {
         this.paymentRepository = paymentRepository;
     }
 
-    @GetMapping("")
-    public ResponseEntity<Object> findAll() {
+//    @GetMapping("")
+//    public ResponseEntity<Object> findAll() {
 //        List<Notice> notices = noticeService.getAllNotices();
 //        return new ResponseEntity<>(notices, HttpStatus.OK);
-        List<Payments> payments = paymentRepository.paySelect();
-        return new ResponseEntity<>(payments, HttpStatus.OK);
-    }
+//        List<Payments> payments = paymentRepository.paySelect();
+//        return new ResponseEntity<>(payments, HttpStatus.OK);
+//    }
 
     @GetMapping("/top10Views")
     public ResponseEntity<Object> findTop10Views() {
