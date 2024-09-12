@@ -4,7 +4,22 @@
 
 <mapper namespace="com.example.settlementsys.mapper.PaymentMapper">
 
-    <select id="selectPaymentsBetweenDates" resultType="com.example.settlementsys.dto.Payment">
+    <resultMap id="PaymentResultMap" type="com.example.settlementsys.dto.Payment">
+        <id column="id" property="id" />
+        <result column="partner_id" property="partnerId" />
+        <result column="user_id" property="userId" />
+        <result column="order_id" property="orderId" />
+        <result column="payment_amount" property="paymentAmount" />
+        <result column="payment_date" property="paymentDate" />
+        <result column="payment_method" property="paymentMethod" />
+        <result column="pg_provider_id" property="pgProviderId" />
+        <result column="status" property="status" />
+        <result column="created_at" property="createdAt" />
+        <result column="updated_at" property="updatedAt" />
+    </resultMap>
+
+    <!-- select 쿼리 -->
+    <select id="selectPaymentsBetweenDates" resultMap="PaymentResultMap">
         SELECT *
         FROM payments
         WHERE payment_date BETWEEN #{startDate} AND #{endDate}

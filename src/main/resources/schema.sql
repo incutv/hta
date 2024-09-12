@@ -33,7 +33,16 @@ CREATE TABLE settlements (
                              partner_id INT,                               -- 정산이 관련된 파트너 ID
                              total_amount DECIMAL(15, 2) NOT NULL,         -- 총 정산 금액
                              status VARCHAR(20) DEFAULT 'pending',         -- 정산 상태 (예: pending, completed)
-                             payment_date TIME,                     -- 거래일자
+                             payment_date DATE,                     -- 거래일자
                              created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP, -- 레코드 생성 시각
                              updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP  -- 레코드 업데이트 시각
+);
+
+
+CREATE TABLE shedlock(
+name VARCHAR(64),  -- job의 name PK로 활용
+lock_until TIMESTAMP(3) NULL,  -- 2024-03-12T20:31:00.012189300 단위까지 체크 가능하도록 필드 타입 설정
+locked_at TIMESTAMP(3) NULL,
+locked_by VARCHAR(255), -- 작성자 정보
+PRIMARY KEY (name)
 );

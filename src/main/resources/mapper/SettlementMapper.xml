@@ -4,12 +4,9 @@
 
 <mapper namespace="com.example.settlementsys.mapper.SettlementMapper">
 
-    <select id="findAll" resultType="com.example.settlementsys.dto.Notice">
-        SELECT *
-        FROM notice
-                 limit 5000;
-    </select>
-
-
+    <insert id="insertSettlement" parameterType="com.example.settlementsys.dto.Settlement">
+        INSERT INTO settlements (partner_id, total_amount, status, payment_date, created_at, updated_at)
+        VALUES (#{partnerId}, #{totalAmount}, #{status}, #{paymentDate}, now(), now())
+    </insert>
 
 </mapper>
